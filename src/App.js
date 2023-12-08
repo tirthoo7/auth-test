@@ -4,7 +4,7 @@ import axios from "axios";
 const App = () => {
   const [user, setUser] = useState(null);
 
-  const baseUrl = "http://api.papertalk.io";
+  const baseUrl = "https://api.papertalk.io";
   // const baseUrl = "http://localhost:8000";
 
   useEffect(() => {
