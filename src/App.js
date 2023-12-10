@@ -4,8 +4,8 @@ import axios from "axios";
 const App = () => {
   const [user, setUser] = useState(null);
 
-  const baseUrl = "https://api.papertalk.io";
-  // const baseUrl = "http://localhost:8000";
+  // const baseUrl = "https://api.papertalk.io";
+  const baseUrl = "http://localhost:8000";
 
   useEffect(() => {
     // Check if the user is authenticated on component mount
@@ -31,19 +31,6 @@ const App = () => {
       currentUrl
     )}`;
   };
-  // const handleLogin = async () => {
-  //   try {
-  //     const response = await fetch(`${baseUrl}/auth/google`, {
-  //       withCredentials: true,
-  //     });
-  //     const data = await response.json();
-
-  //     console.log(data);
-  //   } catch (error) {
-  //     // Handle network or other errors
-  //     console.error("Error during authentication:", error);
-  //   }
-  // };
 
   const handleLogout = async () => {
     try {
@@ -59,12 +46,13 @@ const App = () => {
   };
   const handleProfile = async () => {
     try {
-      // Call the logout endpoint on your backend
-      const profile = await axios.get(`${baseUrl}/auth/me`, {
-        withCredentials: true,
+      const response = await fetch(`${baseUrl}/auth/me`, {
+        method: "GET",
+        credentials: "include",
       });
+
       // Update the local state
-      console.log(profile);
+      console.log(response);
     } catch (error) {
       console.error("Logout failed:", error);
     }
@@ -171,6 +159,7 @@ const App = () => {
       ) : (
         <div>
           <p>Please log in to continue.</p>
+
           <button onClick={handleLogin}>Login with Google</button>
         </div>
       )}
