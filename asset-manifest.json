@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/auth-test/static/js/main.6c051b11.js",
+    "main.js": "/auth-test/static/js/main.211cf5b8.js",
     "index.html": "/auth-test/index.html",
-    "main.6c051b11.js.map": "/auth-test/static/js/main.6c051b11.js.map"
+    "main.211cf5b8.js.map": "/auth-test/static/js/main.211cf5b8.js.map"
   },
   "entrypoints": [
-    "static/js/main.6c051b11.js"
+    "static/js/main.211cf5b8.js"
   ]
 }
